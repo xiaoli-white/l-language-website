@@ -4,6 +4,9 @@ import {defineConfig} from 'vitepress'
 export default defineConfig({
     title: "L Language",
     description: "L Language Website",
+    rewrites: {
+        "zh/:param*":":param*"
+    },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         outline: "deep",
@@ -41,7 +44,7 @@ export default defineConfig({
         ]
     },
     locales: {
-        root: {
+        zh: {
             label: "简体中文",
             lang: "zh-Hans",
         },
