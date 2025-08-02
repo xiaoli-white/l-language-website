@@ -43,6 +43,10 @@ function nav(): DefaultTheme.NavItem[] {
             link: '/standard-library/runtime'
         },
         {
+            text: 'LG',
+            link: '/lg/what-is-lg'
+        },
+        {
             text: '平台',
             link: '/platform/what-is-platform'
         },
@@ -65,6 +69,28 @@ function sidebar(): DefaultTheme.SidebarItem[] {
             collapsed: true,
             items: [
                 {text: 'Runtime', link: "/standard-library/runtime"}
+            ]
+        },
+        {
+            text: "LG",
+            collapsed: true,
+            items: [
+                {text: "什么是LG", link: "/lg/what-is-lg"},
+                {text: "什么是LG IR", link: "/lg/what-is-lg-ir"},
+                {text: "IRModule", link: "/lg/ir-module"},
+                {text: "IRConstantPool", link: "/lg/ir-constant-pool"},
+                {text: "IRFunction", link: "/lg/ir-function"},
+                {text: "IRStructure", link: "/lg/ir-structure"},
+                {text: "IRType", link: "/lg/ir-type"},
+                {text: "IRInstruction", link: "/lg/ir-instruction"},
+                {text: "IROperand", link: "/lg/ir-operand"},
+                {text: "IRControlFlowGraph", link: "/lg/ir-control-flow-graph"},
+                {text: "IRField", link: "/lg/ir-field"},
+                {text: "IRGlobalDataSection", link: "/lg/ir-global-data-section"},
+                {text: "IRGlobalInitSection", link: "/lg/ir-global-init-section"},
+                {text: "IRVisitor", link: "/lg/ir-visitor"},
+                {text: "Generator", link: "/lg/generator"},
+                {text: "LGenerator", link: "/lg/lgenerator"},
             ]
         },
         {

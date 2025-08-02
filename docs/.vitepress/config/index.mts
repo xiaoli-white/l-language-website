@@ -21,7 +21,7 @@ export default defineConfig({
         logo: {src: '/logo-mini.png', width: 24, height: 24},
 
         socialLinks: [
-            {icon: 'github', link: 'https://github.com/xiaoli-white/'}
+            {icon: 'github', link: 'https://github.com/xiaoli-white/L-Language-Dev'}
         ],
 
         search: {
