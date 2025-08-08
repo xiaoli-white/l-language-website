@@ -91,6 +91,7 @@ IR 指令集按照功能可分为以下几类：
 - USHR("ushr") - 逻辑右移
 
 #### 原子操作
+
 支持原子操作标志，确保操作的原子性。
 
 ### IRConditionalJump（条件跳转指令）
@@ -107,6 +108,7 @@ IR 指令集按照功能可分为以下几类：
 - LessEqual("le") - 小于等于
 
 #### 原子操作
+
 支持原子操作标志，确保条件检查和跳转的原子性。
 
 ### IRGoto（无条件跳转指令）
@@ -153,9 +155,11 @@ IR 指令集按照功能可分为以下几类：
 
 - ZeroExtend("zext") - 零扩展
 - SignExtend("sext") - 符号扩展
+- Truncate("trunc") - 截断
 - IntToFloat("itof") - 整数转浮点数
 - FloatToInt("ftoi") - 浮点数转整数
 - FloatExtend("fext") - 浮点数扩展
+- FloatTruncate("ftrunc") - 浮点数截断
 
 ### IRNegate（数值取反指令）
 
@@ -194,6 +198,7 @@ IR 指令集按照功能可分为以下几类：
 ### 操作数
 
 每条指令都可以有零个或多个操作数，操作数可以是：
+
 - 常量
 - 虚拟寄存器
 - 内存地址
@@ -201,12 +206,14 @@ IR 指令集按照功能可分为以下几类：
 ### 结果存储
 
 大多数指令会生成结果，结果可以存储在：
+
 - 虚拟寄存器中
 - 内存位置中
 
 ### 副作用
 
 某些指令具有副作用，如：
+
 - 修改内存状态
 - 改变控制流
 - 进行系统调用
@@ -220,6 +227,7 @@ IR 指令集按照功能可分为以下几类：
 ### 优化
 
 优化器可以对 IR 指令进行各种优化，如：
+
 - 死代码消除
 - 常量传播
 - 公共子表达式消除
@@ -244,6 +252,7 @@ public IRCalculate(boolean isAtomic, Operator operator, IRType type, IROperand o
 ```
 
 参数：
+
 - `isAtomic` - 是否为原子操作
 - `operator` - 操作符
 - `type` - 操作数类型
@@ -258,6 +267,7 @@ public IRConditionalJump(boolean isAtomic, IRType type, IRCondition condition, I
 ```
 
 参数：
+
 - `isAtomic` - 是否为原子操作
 - `type` - 操作数类型
 - `condition` - 条件码
@@ -272,6 +282,7 @@ public IRGoto(String target)
 ```
 
 参数：
+
 - `target` - 目标基本块名称
 
 #### IRInvoke
@@ -281,6 +292,7 @@ public IRInvoke(IRType returnType, IROperand address, IRType[] argumentTypes, IR
 ```
 
 参数：
+
 - `returnType` - 返回值类型
 - `address` - 函数地址操作数
 - `argumentTypes` - 参数类型数组
@@ -294,6 +306,7 @@ public IRReturn(IROperand value)
 ```
 
 参数：
+
 - `value` - 返回值操作数（可为 null）
 
 #### IRGet
@@ -303,6 +316,7 @@ public IRGet(IRType type, IROperand address, IRVirtualRegister target)
 ```
 
 参数：
+
 - `type` - 数据类型
 - `address` - 地址操作数
 - `target` - 目标虚拟寄存器
@@ -314,6 +328,7 @@ public IRSet(IRType type, IROperand address, IROperand value)
 ```
 
 参数：
+
 - `type` - 数据类型
 - `address` - 地址操作数
 - `value` - 值操作数
@@ -325,6 +340,7 @@ public IRMalloc(IROperand size, IRVirtualRegister target)
 ```
 
 参数：
+
 - `size` - 大小操作数
 - `target` - 目标虚拟寄存器
 
@@ -335,6 +351,7 @@ public IRTypeCast(Kind kind, IRType originalType, IROperand source, IRType targe
 ```
 
 参数：
+
 - `kind` - 转换类型
 - `originalType` - 原始类型
 - `source` - 源操作数
