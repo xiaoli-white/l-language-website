@@ -61,6 +61,11 @@ function sidebar(): DefaultTheme.SidebarItem[] {
             items: [
                 {text: '介绍', link: '/guide/introduction'},
                 {text: '快速开始', link: '/guide/quick-start'},
+                {text: '注释', link: '/guide/comment'},
+                {text: '基本数据类型', link: '/guide/basic-types'},
+                {text: '数组类型', link: '/guide/array'},
+                {text: "变量", link: '/guide/variable'},
+                {text: '条件语句', link: '/guide/condition-statement'},
                 {text: '垃圾回收', link: '/guide/garbage-collection'},
             ]
         },
